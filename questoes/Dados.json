@@ -1,0 +1,50 @@
+{
+    "perguntas": [
+      {
+        "questao": "Em relação à LGPD, qual das alternativas abaixo define corretamente o conceito de 'dados pessoais sensíveis'?",
+        "respostas": [
+          { "id": 1, "texto": "Dados relacionados à situação econômica do titular.", "acertou": false },
+          { "id": 2, "texto": "Dados que podem ser usados para identificar diretamente um indivíduo.", "acertou": false },
+          { "id": 3, "texto": "Dados sobre a origem racial, crenças religiosas, opiniões políticas e saúde do titular.", "acertou": true },
+          { "id": 4, "texto": "Dados cadastrais fornecidos por empresas para fins comerciais.", "acertou": false }
+        ]
+      },
+      {
+        "questao": "A empresa pode tratar dados pessoais de funcionários sem uma base legal específica, conforme a LGPD?",
+        "respostas": [
+          { "id": 1, "texto": "Sim, se o funcionário autorizar por escrito.", "acertou": false },
+          { "id": 2, "texto": "Não, a empresa sempre precisa de uma base legal.", "acertou": true },
+          { "id": 3, "texto": "Sim, se os dados forem utilizados para marketing interno.", "acertou": false },
+          { "id": 4, "texto": "Sim, mas somente se os dados forem anônimos.", "acertou": false }
+        ]
+      },
+      {
+        "questao": "O que é o 'princípio da minimização dos dados' estabelecido pela LGPD?",
+        "respostas": [
+          { "id": 1, "texto": "Os dados pessoais podem ser coletados em grande quantidade, sem limites.", "acertou": false },
+          { "id": 2, "texto": "Apenas dados estritamente necessários para atingir a finalidade específica devem ser coletados.", "acertou": true },
+          { "id": 3, "texto": "Todos os dados pessoais devem ser mantidos por tempo indefinido.", "acertou": false },
+          { "id": 4, "texto": "O princípio se refere à coleta de dados apenas de empresas grandes.", "acertou": false }
+        ]
+      },
+      {
+        "questao": "Quando uma empresa coleta dados pessoais, qual é a responsabilidade dela em relação à transparência, segundo a LGPD?",
+        "respostas": [
+          { "id": 1, "texto": "A empresa deve informar apenas as finalidades gerais de uso dos dados.", "acertou": false },
+          { "id": 2, "texto": "A empresa deve comunicar explicitamente ao titular todas as finalidades do tratamento de dados, de forma clara e acessível.", "acertou": true },
+          { "id": 3, "texto": "A empresa não precisa informar sobre o uso específico dos dados, desde que seja uma coletânea de dados em massa.", "acertou": false },
+          { "id": 4, "texto": "A empresa pode manter as finalidades de uso de dados em sigilo, desde que o titular tenha consentido.", "acertou": false }
+        ]
+      },
+      {
+        "questao": "De acordo com a LGPD, qual é a principal condição para o tratamento de dados pessoais sem o consentimento do titular?",
+        "respostas": [
+          { "id": 1, "texto": "Quando os dados são necessários para o cumprimento de um contrato entre as partes.", "acertou": true },
+          { "id": 2, "texto": "Quando os dados são de interesse público ou jornalístico.", "acertou": false },
+          { "id": 3, "texto": "Quando a empresa determina que os dados são imprescindíveis para seu funcionamento.", "acertou": false },
+          { "id": 4, "texto": "Quando os dados são fornecidos por fontes públicas, como redes sociais.", "acertou": false }
+        ]
+      }
+    ]
+  }
+  

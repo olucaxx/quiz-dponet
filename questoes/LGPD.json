@@ -1,0 +1,50 @@
+{
+    "perguntas": [
+      {
+        "questao": "Qual é o principal objetivo da Lei Geral de Proteção de Dados Pessoais (LGPD)?",
+        "respostas": [
+          { "id": 1, "texto": "Garantir o sigilo das informações financeiras de empresas", "acertou": false },
+          { "id": 2, "texto": "Proteger a privacidade e os dados pessoais dos indivíduos", "acertou": true },
+          { "id": 3, "texto": "Regular o uso de dados pessoais para fins comerciais exclusivamente", "acertou": false },
+          { "id": 4, "texto": "Estabelecer regras de segurança para redes de computadores", "acertou": false }
+        ]
+      },
+      {
+        "questao": "Quem é responsável por regulamentar e fiscalizar a aplicação da LGPD no Brasil?",
+        "respostas": [
+          { "id": 1, "texto": "Ministério da Justiça", "acertou": false },
+          { "id": 2, "texto": "Autoridade Nacional de Proteção de Dados (ANPD)", "acertou": true },
+          { "id": 3, "texto": "Tribunal de Justiça", "acertou": false },
+          { "id": 4, "texto": "Banco Central", "acertou": false }
+        ]
+      },
+      {
+        "questao": "O que é considerado 'dado pessoal sensível' pela LGPD?",
+        "respostas": [
+          { "id": 1, "texto": "Informações sobre compras realizadas online", "acertou": false },
+          { "id": 2, "texto": "Dados relacionados à saúde, origem racial ou orientação sexual", "acertou": true },
+          { "id": 3, "texto": "Nome completo e endereço", "acertou": false },
+          { "id": 4, "texto": "Endereço de e-mail", "acertou": false }
+        ]
+      },
+      {
+        "questao": "De acordo com a LGPD, qual é uma das bases legais para o tratamento de dados pessoais?",
+        "respostas": [
+          { "id": 1, "texto": "A obtenção de lucro com os dados pessoais", "acertou": false },
+          { "id": 2, "texto": "O consentimento explícito do titular dos dados", "acertou": true },
+          { "id": 3, "texto": "A preferência da empresa em coletar os dados", "acertou": false },
+          { "id": 4, "texto": "A finalidade exclusiva de marketing", "acertou": false }
+        ]
+      },
+      {
+        "questao": "O que um titular de dados pessoais tem direito, de acordo com a LGPD?",
+        "respostas": [
+          { "id": 1, "texto": "Vender seus dados para outras empresas", "acertou": false },
+          { "id": 2, "texto": "Solicitar a exclusão de seus dados pessoais em determinadas circunstâncias", "acertou": true },
+          { "id": 3, "texto": "Obter pagamento pelo uso de seus dados pessoais", "acertou": false },
+          { "id": 4, "texto": "Permitir que seus dados sejam compartilhados sem qualquer consentimento", "acertou": false }
+        ]
+      }
+    ]
+  }
+  

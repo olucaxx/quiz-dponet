@@ -1,0 +1,17 @@
+to-do
+GERAL
+separar o código front-end do back-end de forma básica primeiro, assim o script.js cuida somente da alteração da página e não o gerenciamento dos results
+
+QUESTIONÁRIOS
+mudar a cor dos botões e interface para padrão da DPONET
+
+MENU
+escolha de questionarios por cards
+nesses cards ter uma descrição do questionário e do que se trata
+
+RESULTADO
+alterar as mensagens de resultado 
+alteração geral dessa tela na verdade
+
+FORMS
+criação do forms para encaminhar uma mensagem / entrar em contato

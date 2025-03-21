@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-image: linear-gradient(to left, #076ea0, #233154);
+  }
+
+  #logo {
+    width: 300px; 
+    display: block;
+    margin: 30px auto;
+  }
+
+  /* a classe "app" define o div central da página, o bloco principal que contém os elementos */
+  .app{
+    background: #fff;
+    width: 90%; /* largura ocupa 90% da tela*/
+    max-width: 600px; /* largura maxima de 600px na tela */
+    margin: 30px auto 0; /* centraliza a tela de questão na pagina */
+    padding: 30px; /* aumenta o espacamento interno da parte branca da tela de perguntas */
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 1);
+    border: 1px solid;
+    color: #001e4d
+  }
+  
+  .app h1{ /*afeta todos os h1 dentro da div com a classe app outros que estiverem fora dessa classe ou que não forem h1 nãop serão afetados */
+    font-weight: 600; /* deixa o titulo com a grossura da letra mais gordinha */
+    padding-bottom: 10px;
+  }
+  /* fim da estilização geral do bloco central */
+  
+  .introducao {
+    margin: 10px 0px;
+  }
+
+  .quiz{
+    padding: 10px 0; /* aumentar o espaço interno da parte das questões e alternativas*/
+  }
+  
+  .quiz h2{
+    font-size: 18px;
+    color: #001e4d;
+    font-weight: 600;
+  }
+
+  #texto-aviso {
+    border: 3px solid black;
+    padding: 10px;
+    background-color: powderblue;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    background: #fff;
+    font-size: medium;
+    color: #222;
+    font-weight: 500;
+    width: 100%; /*faz com que os botões ocupem a tela inteira com exceção do espaço que o padding do .quiz já ocupa*/
+    border: 1px solid #222;
+    padding: 10px;/*já que o padding é o espaço interno essa propriedade deixa os btões maiores, mais gordinhos*/
+    margin: 10px 0;/*margin é o espaço externo, ou seja separa os botões para que les não fiquem colados um em cima do outro*/
+    text-align: left;/*joga o texto de dentro do botão para o lado esquerdo, poderia ser center = centro, right = direita tbm*/
+    border-radius: 4px;/*arredonda as quinas das bordas, quanto maior a propriedade, mais arredondado fica, pode usar px - pixels ou % - porcentagem*/
+    cursor: pointer;/*quando o mouse passar em cima o ponteiro vai virar uma mão, para dar aquele efeito de interatividade*/
+    transition: all 1s; /* aqui serve para quando o mouse sair de cima e voltar uma propriedade, como mudança de cor, só que uma forma suave, dando aquele delay*/
+
+    /* Centralização vertical e espaçamento */
+    display: flex;         /* Ativa Flexbox */
+    align-items: center;   /* Centraliza verticalmente */
+    gap: 8px;              /* Espaçamento entre ícone e texto */
+    overflow: hidden;
+    text-decoration: none; /* Remove o sublinhado */
+  }
+
+  .btn:hover:not([disabled]){/*se o botão estiver habilitado ele vai mudar a cor de cada botão ao passar o mouse por cima, porém se o botão estiver desabilitado ou seja depois do usuário escolher uma questão e não puder mais mudar, esse efeito não ocorrerá*/
+    background: #010730;
+    color: #fff;
+  }
+  
+  .btn:disabled{
+    cursor: no-drop;
+  }
+
+  #alternativas .btn {
+    margin: 10px 0px 0px 0px;
+  }
+  
+  #container-proxima {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #botao-proxima {
+    font-size: medium;
+    background: #001e4d;
+    color: #fff;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 5px 0 0 0;
+    border-radius: 4px;
+    cursor: pointer;
+    /*display: none;  essse botão só vai aparecer se o usuário escolher uma das respostas*/
+  }

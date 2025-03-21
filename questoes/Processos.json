@@ -1,0 +1,50 @@
+{
+    "perguntas": [
+      {
+        "questao": "Como a empresa assegura que os dados pessoais coletados são tratados de acordo com os princípios da LGPD, como a finalidade e a necessidade?",
+        "respostas": [
+          { "id": 1, "texto": "Coleta dados apenas com a autorização do titular e usa as informações para qualquer finalidade.", "acertou": false },
+          { "id": 2, "texto": "Limita a coleta de dados ao necessário para cumprir uma finalidade específica, com base em uma análise prévia.", "acertou": true },
+          { "id": 3, "texto": "Coleta dados apenas quando solicitado por autoridades governamentais, sem preocupação com a finalidade.", "acertou": false },
+          { "id": 4, "texto": "Usa os dados para fins comerciais sem qualquer restrição, sem analisar a necessidade ou a finalidade.", "acertou": false }
+        ]
+      },
+      {
+        "questao": "Quais medidas a empresa implementou para garantir a segurança e a confidencialidade dos dados pessoais durante seu tratamento?",
+        "respostas": [
+          { "id": 1, "texto": "Nenhuma medida específica foi implementada; a segurança depende apenas do comportamento dos funcionários.", "acertou": false },
+          { "id": 2, "texto": "A empresa adota criptografia, controles de acesso e políticas de segurança internas para proteger os dados pessoais.", "acertou": true },
+          { "id": 3, "texto": "A empresa armazena os dados pessoais em papel e confia apenas em backups manuais.", "acertou": false },
+          { "id": 4, "texto": "A segurança dos dados é garantida exclusivamente por meio de seguros contra perda de dados.", "acertou": false }
+        ]
+      },
+      {
+        "questao": "De que forma a empresa gerencia o consentimento dos titulares dos dados e garante que ele seja livre, informado e explícito?",
+        "respostas": [
+          { "id": 1, "texto": "O consentimento é dado por padrão no momento do registro do cliente, sem necessidade de confirmação explícita.", "acertou": false },
+          { "id": 2, "texto": "A empresa coleta o consentimento por meio de formulários ou declarações claras, garantindo que o titular entenda o que está autorizando.", "acertou": true },
+          { "id": 3, "texto": "Não há necessidade de consentimento, pois a empresa pode coletar dados sem o conhecimento dos titulares.", "acertou": false },
+          { "id": 4, "texto": "O consentimento é obtido apenas uma vez, e não é necessário renová-lo em futuras interações com o titular.", "acertou": false }
+        ]
+      },
+      {
+        "questao": "Como a empresa lida com as solicitações dos titulares dos dados, como acesso, correção, exclusão e portabilidade de dados pessoais?",
+        "respostas": [
+          { "id": 1, "texto": "As solicitações dos titulares não são atendidas, pois a empresa considera que os dados são de propriedade dela.", "acertou": false },
+          { "id": 2, "texto": "A empresa tem um processo formal para atender as solicitações dos titulares, garantindo que seus direitos sejam respeitados dentro do prazo estipulado pela LGPD.", "acertou": true },
+          { "id": 3, "texto": "As solicitações são atendidas apenas se o titular pagar uma taxa adicional para processar o pedido.", "acertou": false },
+          { "id": 4, "texto": "A empresa não permite que os titulares acessem ou alterem seus dados pessoais sob nenhuma circunstância.", "acertou": false }
+        ]
+      },
+      {
+        "questao": "Quais são os protocolos da empresa em caso de violação de dados pessoais e como ela comunica os incidentes aos titulares e à Autoridade Nacional de Proteção de Dados (ANPD)?",
+        "respostas": [
+          { "id": 1, "texto": "A empresa não tem protocolos específicos, e a violação não é comunicada a ninguém.", "acertou": false },
+          { "id": 2, "texto": "Em caso de violação, a empresa notifica rapidamente os titulares e a ANPD, conforme exigido pela LGPD, com medidas para mitigar os danos.", "acertou": true },
+          { "id": 3, "texto": "A empresa notifica a ANPD apenas se o incidente for grave, mas não comunica os titulares dos dados.", "acertou": false },
+          { "id": 4, "texto": "A empresa tenta resolver a violação internamente, sem a necessidade de notificar ninguém.", "acertou": false }
+        ]
+      }
+    ]
+  }
+  

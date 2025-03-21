@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <title>Quiz DPOnet</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" href="">
+  </head>
+  <body>
+    <a href="https://www.dponet.com.br"> <img src="logo.png" alt="Logotipo DPOnet" id="logo"> </a> 
+    <div class="app">
+
+      <!-- parte superior, introdução ao teste -->
+      <h1> Teste de Triagem </h1>
+      <div class="introducao">
+        <h4> Olá! Seja bem-vindo(a) ao teste de triagem da DPOnet. </h4>
+        <p> Aqui, você poderá participar de testes rápidos e informativos sobre diversos tópicos, avaliando o preparo da sua empresa em relação à LGPD. </p>
+      </div>
+      
+      <!-- parte inferior, seleção do teste -->
+      <div class="quiz">
+        <h2> Clique em um tema para iniciar </h2>
+
+        <div id="botao-respostas">
+          <a class="btn" id="btnDados">
+            <i class="material-icons">analytics</i>
+            <span> Dados </span>
+          </a>
+
+          <a class="btn" id="btnFuncionarios">
+              <i class="material-icons">groups</i> 
+              <span> Funcionários </span>
+          </a>
+
+          <a class="btn" id="btnLGPD">
+            <i class="material-icons">local_police</i> 
+            <span> LGPD </span>
+          </a>
+
+          <a class="btn" id="btnProcessos">
+            <i class="material-icons">description</i> 
+            <span> Processos </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- texto de aviso abaixo dos botões -->
+      <p id="texto-aviso"> <b>AVISO:</b> os resultados dos testes são apenas indicativos e podem não refletir completamente a realidade da sua empresa. <strong>Para uma avaliação mais detalhada, agende uma consulta com nossos especialistas</strong>. </p>
+    </div>
+  <script src="scripts/menu.js"> </script>
+  </body>
+</html>
