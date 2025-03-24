@@ -6,15 +6,30 @@ const botaoProximaQuestao = window.document.getElementById("botao-proxima")
 
 let indiceQuestaoAtual = 0//para saber qual é o número da questão atual
 let pontuacao = 0 //saber quala pontução do jogador
+let questoes = [];//dessa forma atribuímos um valor para a variável questões
+
+function embaralharArray(array) {// Função para embaralhar um array
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));//Isso é uma função do próprio java, que cria valores aleatórios, e os atribuí as questões
+    [array[i], array[j]] = [array[j], array[i]];//Utilizamos essa técnica para trocar os valores de posição
+  }
+}
 
 function carregarQuestoes() {
-  fetch('questoes/' + categoria +'.json')  // Caminho para o arquivo JSON
-    .then(response => response.json()) // Converte a resposta em JSON
+  fetch('questoes/' + categoria + '.json')
+    .then(response => response.json())
     .then(data => {
-      questoes = data.perguntas;  // Acessa o array de questões no JSON
-      iniciarQuiz();  // Inicia o quiz após carregar as questões
+      questoes = data.perguntas;
+      randomizarQuestoes();
+      iniciarQuiz();
     })
     .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
+}
+
+
+function randomizarQuestoes() {//Dessa maneira as ordens das questões e das respostas serão diferentes a cada vez que o usuário jogar
+  embaralharArray(questoes);
+  questoes.forEach(questao => embaralharArray(questao.respostas));
 }
 
 function iniciarQuiz(){
