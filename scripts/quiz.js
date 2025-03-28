@@ -4,14 +4,27 @@ const elementoQuestao = window.document.getElementById("enunciado")//cria uma va
 const botoesRespostas = window.document.getElementById("alternativas")
 const botaoProximaQuestao = window.document.getElementById("botao-proxima")
 
+const totalPerguntas = 5
+
 let indiceQuestaoAtual = 0//para saber qual é o número da questão atual
 let pontuacao = 0 //saber quala pontução do jogador
+let observacoes = []
+
+// Função para embaralhar um array utilizando o algoritmo de Fisher-Yates
+function embaralharArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Troca os elementos
+    }
+}
 
 function carregarQuestoes() {
   fetch('questoes/' + categoria +'.json')  // Caminho para o arquivo JSON
     .then(response => response.json()) // Converte a resposta em JSON
     .then(data => {
       questoes = data.perguntas;  // Acessa o array de questões no JSON
+      embaralharArray(questoes);  // Embaralha as questões ao carregar
+      questoes.forEach(q => embaralharArray(q.respostas)); // Embaralha as alternativas de cada questão
       iniciarQuiz();  // Inicia o quiz após carregar as questões
     })
     .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
@@ -67,6 +80,11 @@ function selecionarQuestao(e){//esse "e" dentro dos parenteses é o evento passa
     pontuacao++
   }else{
   	botaoClicado.style.backgroundColor = "#ed665c"; 
+    const questaoAtual = questoes[indiceQuestaoAtual]
+    observacoes.push({
+      numQuestao: indiceQuestaoAtual + 1,
+      observacao: questaoAtual.observacao
+    })
   }
   
   Array.from(botoesRespostas.children).forEach((botao) => {
@@ -74,6 +92,16 @@ function selecionarQuestao(e){//esse "e" dentro dos parenteses é o evento passa
   })
 
   botaoProximaQuestao.style.display = "block"
+
+  registrarResposta();
+}
+
+function registrarResposta() {
+  sessionStorage.setItem('resultadoQuiz', JSON.stringify({
+    acertos: pontuacao,
+    total: totalPerguntas,
+    observacoes: observacoes
+  }));
 }
 
 
@@ -109,6 +137,7 @@ function lidarProximoBotao(){
   if(indiceQuestaoAtual < questoes.length){
   	mostrarQuestao()//mostra a próxima questão
   }else{
+    registrarResposta();
   	mostrarPontuacao()//mostra a pontuação se chegou no final
   }
 }

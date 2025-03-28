@@ -52,6 +52,7 @@
     padding: 10px;
     background-color: powderblue;
     border-radius: 4px;
+    margin-bottom: 10px;
   }
   
   .btn {
@@ -106,4 +107,37 @@
     border-radius: 4px;
     cursor: pointer;
     /*display: none;  essse botão só vai aparecer se o usuário escolher uma das respostas*/
+  }
+
+  #acertos {
+    font-size: xx-large;
+    font-weight: 100;
+    margin-bottom: 10px;
+  }
+
+  #container-observacoes {
+    padding: 10px 0px;
+    border-radius: 4px;
+  }
+
+  #container-observacoes h3 {
+    font-size: x-large;
+    margin-bottom: 7px;
+  }
+
+  #container-observacoes > p {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 5px 0px 0px 0px;
+  }
+
+  #container-observacoes > div {
+    margin-bottom: 10px;
+  }
+
+  #container-contato {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 4px;
   }
