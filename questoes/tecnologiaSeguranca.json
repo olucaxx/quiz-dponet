@@ -1,0 +1,399 @@
+{
+    "categoria": "Tecnologia e Segurança",
+    "facil": [
+        {
+            "questao": "Qual medida básica protege dados pessoais em caso de perda ou roubo de dispositivos?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Usar senhas simples como 123456.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Ativar a criptografia do disco rígido.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Armazenar dados apenas em papel.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Compartilhar dispositivos entre colegas.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "A criptografia garante que dados não sejam acessados mesmo se o dispositivo for violado."
+        },
+        {
+            "questao": "Para que serve a autenticação de dois fatores (2FA)?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Aumentar a velocidade de login.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Reduzir custos de TI.",
+                    "acertou": false
+                },
+                {
+                    "id": 3,
+                    "texto": "Adicionar uma camada extra de segurança ao acesso.",
+                    "acertou": true
+                },
+                {
+                    "id": 4,
+                    "texto": "Substituir senhas por biometria.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "O 2FA previne acessos não autorizados mesmo que a senha seja comprometida."
+        },
+        {
+            "questao": "Qual prática NÃO é recomendada para proteger sistemas?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Atualizar softwares regularmente.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Usar a mesma senha em múltiplas contas.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Fazer backups periódicos.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Restringir acesso por função.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Senhas repetidas facilitam invasões em cadeia. Use gerenciadores de senhas!"
+        },
+        {
+            "questao": "O que é phishing?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Um tipo de vírus que formata discos.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Técnica de engenharia social para roubo de dados.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Falha em sistemas de criptografia.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Método de backup em nuvem.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Phishing usa e-mails ou mensagens falsas para enganar usuários. Desconfie de links suspeitos!"
+        },
+        {
+            "questao": "Qual é o objetivo principal de um firewall?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Acelerar a conexão com a internet.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Bloquear acessos não autorizados à rede.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Gerenciar senhas dos usuários.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Otimizar o armazenamento de dados.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Firewalls filtram tráfego malicioso e protegem a rede interna."
+        }
+    ],
+    "media": [
+        {
+            "questao": "Qual ação é essencial após identificar uma vulnerabilidade em um sistema?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Ignorar, se não houver ataques recentes.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Corrigir a vulnerabilidade com patches ou atualizações.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Compartilhar detalhes publicamente em redes sociais.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Desligar todos os servidores imediatamente.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Correções rápidas evitam exploração por hackers."
+        },
+        {
+            "questao": "Qual técnica protege dados durante transmissão pela internet?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "HTTPS (com SSL/TLS).",
+                    "acertou": true
+                },
+                {
+                    "id": 2,
+                    "texto": "Armazenamento em planilhas offline.",
+                    "acertou": false
+                },
+                {
+                    "id": 3,
+                    "texto": "Uso de pendrives criptografados.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Backups em HD externo.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "HTTPS criptografa a comunicação entre navegador e servidor."
+        },
+        {
+            "questao": "Qual política reduz riscos de vazamento por funcionários?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Permitir acesso total a todos os sistemas.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Limitar acesso apenas ao necessário para cada função.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Não usar antivírus para economizar recursos.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Compartilhar senhas via e-mail.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "O princípio do menor privilégio minimiza danos em caso de comprometimento."
+        },
+        {
+            "questao": "O que é anonimização de dados?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Excluir dados permanentemente.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Remover informações que permitam identificar uma pessoa.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Criar backups em locais diferentes.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Usar dados falsos para testes.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Dados anonimizados não são considerados pessoais pela LGPD."
+        },
+        {
+            "questao": "Qual ferramenta detecta atividades suspeitas em redes?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Planilha Excel.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Sistema de Detecção de Intrusões (IDS).",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Google Drive.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Software de edição de texto.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "IDS monitora tráfego e alerta sobre padrões incomuns."
+        }
+    ],
+    "dificil": [
+        {
+            "questao": "Qual medida é prioritária após um ataque de ransomware?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Pagar o resgate para recuperar os dados.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Isolar sistemas afetados e restaurar backups.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Reiniciar todos os servidores imediatamente.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Ocultar o incidente dos clientes.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Backups atualizados são a melhor defesa contra ransomware."
+        },
+        {
+            "questao": "Qual fator é crucial ao escolher um fornecedor de nuvem?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Preço mais baixo do mercado.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Certificações de segurança e conformidade com LGPD.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Quantidade de servidores físicos.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Interface colorida e moderna.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Fornecedores devem garantir proteção equivalente à LGPD."
+        },
+        {
+            "questao": "Qual prática evita vazamentos em APIs que acessam dados pessoais?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Expor APIs publicamente sem autenticação.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Usar tokens de acesso com tempo limitado e escopo restrito.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Armazenar senhas em texto claro.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Ignorar logs de acesso.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "APIs seguras exigem autenticação rigorosa e monitoramento."
+        },
+        {
+            "questao": "Qual estratégia reduz riscos em caso de acesso indevido a backups?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Armazenar backups apenas localmente.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Criptografar backups e testar restaurações periodicamente.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Deletar backups antigos automaticamente.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Compartilhar backups com terceiros não verificados.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Backups criptografados garantem que dados não sejam úteis se roubados."
+        },
+        {
+            "questao": "Qual ação é mais eficaz para proteger dados em dispositivos móveis?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Permitir jailbreak/root para mais funcionalidades.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Instalar aplicativos de fontes não confiáveis.",
+                    "acertou": false
+                },
+                {
+                    "id": 3,
+                    "texto": "Usar MDM (Mobile Device Management) para controle remoto.",
+                    "acertou": true
+                },
+                {
+                    "id": 4,
+                    "texto": "Desativar atualizações automáticas.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "MDM permite apagar dados remotamente e aplicar políticas de segurança."
+        }
+    ]
+}

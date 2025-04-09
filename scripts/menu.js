@@ -1,15 +1,27 @@
-window.document.getElementById('btnDados').addEventListener('click', function() {
-  window.location.href = "quiz.html?categoria=Dados";
-});
+let stringLinkDoSite = "";
 
-window.document.getElementById('btnFuncionarios').addEventListener('click', function() {
-  window.location.href = "quiz.html?categoria=Funcionários";
-});
+function abrirSelecaoDificuldade(categoria) {
+  stringLinkDoSite = `quiz.html?categoria=${categoria}`;
+  document.getElementById('container-dificuldade').style.display = 'block';
+}
 
-window.document.getElementById('btnLGPD').addEventListener('click', function() {
-  window.location.href = "quiz.html?categoria=LGPD";
-});
+document.getElementById('btnGestaoPessoasRH').addEventListener('click', function() { abrirSelecaoDificuldade("gestaoPessoasRH") });
+document.getElementById('btnLegalidadeRegulacao').addEventListener('click', function() { abrirSelecaoDificuldade("legalidadeRegulacao") });
+document.getElementById('btnTecnologiaSeguranca').addEventListener('click', function() { abrirSelecaoDificuldade("tecnologiaSeguranca") });
+document.getElementById('btnCulturaEtica').addEventListener('click', function() { abrirSelecaoDificuldade("culturaEtica") });
+document.getElementById('btnProcessosGovernanca').addEventListener('click', function() { abrirSelecaoDificuldade("processosGovernanca") });
+document.getElementById('btnMarketingVenda').addEventListener('click', function() { abrirSelecaoDificuldade("marketingVendas") });
 
-window.document.getElementById('btnProcessos').addEventListener('click', function() {
-  window.location.href = "quiz.html?categoria=Processos";
-});
+function escolherDificuldade(dificuldade) {
+  document.getElementById('container-dificuldade').style.display = 'none';
+
+  const destino = `${stringLinkDoSite}&dificuldade=${dificuldade}`;
+  window.location.href = destino;
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById('container-dificuldade');
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

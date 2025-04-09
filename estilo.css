@@ -7,12 +7,14 @@
   
   body{
     background-image: linear-gradient(to left, #076ea0, #233154);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   #logo {
-    width: 300px; 
-    display: block;
-    margin: 30px auto;
+    width: 350px; 
+    margin-top: 30px;
   }
 
   /* a classe "app" define o div central da página, o bloco principal que contém os elementos */
@@ -86,6 +88,23 @@
     cursor: no-drop;
   }
 
+  #container-dificuldade {
+    display: none;
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .items-container-dificuldade {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+  }
+
   #alternativas .btn {
     margin: 10px 0px 0px 0px;
   }
@@ -106,7 +125,7 @@
     margin: 5px 0 0 0;
     border-radius: 4px;
     cursor: pointer;
-    /*display: none;  essse botão só vai aparecer se o usuário escolher uma das respostas*/
+    display: none;  
   }
 
   #acertos {
