@@ -69,14 +69,11 @@
     text-align: left;/*joga o texto de dentro do botão para o lado esquerdo, poderia ser center = centro, right = direita tbm*/
     border-radius: 4px;/*arredonda as quinas das bordas, quanto maior a propriedade, mais arredondado fica, pode usar px - pixels ou % - porcentagem*/
     cursor: pointer;/*quando o mouse passar em cima o ponteiro vai virar uma mão, para dar aquele efeito de interatividade*/
-    transition: all 1s; /* aqui serve para quando o mouse sair de cima e voltar uma propriedade, como mudança de cor, só que uma forma suave, dando aquele delay*/
-
-    /* Centralização vertical e espaçamento */
-    display: flex;         /* Ativa Flexbox */
-    align-items: center;   /* Centraliza verticalmente */
-    gap: 8px;              /* Espaçamento entre ícone e texto */
-    overflow: hidden;
-    text-decoration: none; /* Remove o sublinhado */
+    transition: all 1s; /*aqui serve para quando o mouse sair de cima e voltar uma propriedade, como mudança de cor, só que uma forma suave, dando aquele delay*/
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
   }
 
   .btn:hover:not([disabled]){/*se o botão estiver habilitado ele vai mudar a cor de cada botão ao passar o mouse por cima, porém se o botão estiver desabilitado ou seja depois do usuário escolher uma questão e não puder mais mudar, esse efeito não ocorrerá*/
@@ -86,6 +83,46 @@
   
   .btn:disabled{
     cursor: no-drop;
+  }
+
+  .tooltip-wrapper {
+    margin-left: auto;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    width: 350px;
+    background-color: #076ea0;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%; 
+    right: -11px; 
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    white-space: normal; 
+  }
+  
+  .tooltip-wrapper:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%; 
+    right: 15px; 
+    margin-left: -5px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: #076ea0 transparent transparent transparent;
   }
 
   #container-dificuldade {
