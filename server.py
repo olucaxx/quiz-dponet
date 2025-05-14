@@ -1,74 +1,63 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json, os
 
-class QuizRequestHandler(BaseHTTPRequestHandler):
-    def get_json_path(self, url_path: str) -> str:
-        root_path: str = os.path.join(os.path.dirname(__file__), 'questoes')
-        
-        match url_path:
-            case '/questions/culturaEtica':
-                return os.path.join(root_path, 'culturaEtica.json')
-            
-            case '/questions/gestaoPessoasRH':
-                return os.path.join(root_path, 'gestaoPessoasRH.json')
-            
-            case '/questions/legalidadeRegulacao':
-                return os.path.join(root_path, 'legalidadeRegulacao.json')
-            
-            case '/questions/marketingVendas':
-                return os.path.join(root_path, 'marketingVendas.json')
-            
-            case '/questions/processosGovernanca':
-                return os.path.join(root_path, 'processosGovernanca.json')
-            
-            case '/questions/tecnologiaSeguranca':
-                return os.path.join(root_path, 'tecnologiaSeguranca.json')
-            
-            case _:
-                return ""
-            
-    def load_questions_dict(self, questions_path: str) -> dict:
-        with open(questions_path, 'r', encoding='utf-8') as file:
-                raw_questions: dict = json.load(file)
-                
-        return {
-            "categoria": raw_questions["categoria"],
-            "questoes": [
-                {
-                    "id_questao": raw_question["id_questao"],
-                    "questao": raw_question["questao"],
-                    "respostas": raw_question["respostas"]
-                }
-                for raw_question in raw_questions["questoes"]
-            ]
-        }
+PORT: int = 8080
+QUESTIONS_DIR: str = os.path.join(os.path.dirname(__file__), 'questoes')
+ROUTES: dict = {
+    '/questions/culturaEtica': 'culturaEtica.json',
+    '/questions/gestaoPessoasRH': 'gestaoPessoasRH.json',
+    '/questions/legalidadeRegulacao': 'legalidadeRegulacao.json',
+    '/questions/marketingVendas': 'marketingVendas.json',
+    '/questions/processosGovernanca': 'processosGovernanca.json',
+    '/questions/tecnologiaSeguranca': 'tecnologiaSeguranca.json'
+}
+
+class QuizRequestHandler(BaseHTTPRequestHandler):         
+    def _send_json_response(self, data: dict[str, str], status_code: int) -> None:
+        self.send_response(status_code)
+        self.send_header('Content-type', 'application/json') 
+        self.send_header('Access-Control-Allow-Origin', '*') 
+        self.end_headers()
+        self.wfile.write(json.dumps(data, indent=2, ensure_ascii=False).encode())
     
-    def do_GET(self):
-        questions_path: str = self.get_json_path(self.path)
+    def _send_error(self, message: str, status_code:int) -> None:
+        self.send_response(status_code)
+        self.end_headers()
+        self.wfile.write(message)
         
-        if not questions_path:
-            self.send_response(404)
-            self.end_headers()
-            self.wfile.write(b'Endpoint not found')
+    
+    def do_GET(self) -> None:
+        if self.path not in ROUTES:
+            self._send_error(b'Endpoint not found', 404)
             return
 
         try:
-            questions: dict = self.load_questions_dict(questions_path)
-            self.send_response(200)
-            self.send_header('Content-type', 'application/json') 
-            self.send_header('Access-Control-Allow-Origin', '*') 
-            self.end_headers()
-            self.wfile.write(json.dumps(questions)).encode() 
+            json_path: str = os.path.join(QUESTIONS_DIR, ROUTES[self.path])
             
+            with open(json_path, 'r', encoding='utf-8') as file:
+                raw_questions: dict = json.load(file)
+                
+            response_data = {
+                "categoria": raw_questions["categoria"],
+                "questoes": [
+                    {
+                        "id_questao": raw_question["id_questao"],
+                        "questao": raw_question["questao"],
+                        "respostas": raw_question["respostas"]
+                    }
+                    for raw_question in raw_questions["questoes"]
+                ]
+            }
+            
+            self._send_json_response(response_data, 200)
+
         except FileNotFoundError:
-            self.send_response(500)
-            self.end_headers()
-            self.wfile.write(b'File not found')
+            self._send_error(b'File not found', 500)
         
 def run():
-    server_address = ("", 8080)
+    server_address = ("", PORT)
     httpd = HTTPServer(server_address, QuizRequestHandler)
-    print("Server running...")
+    print(f"Server running on port {PORT}...")
     httpd.serve_forever()
 
 if __name__ == "__main__":
