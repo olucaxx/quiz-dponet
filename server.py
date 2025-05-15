@@ -21,7 +21,7 @@ CATEGORIES: dict = {
 }
 
 class QuizRequestHandler(BaseHTTPRequestHandler):         
-    def _send_json_response(self, data: dict[str, str], status_code: int) -> None:
+    def _send_json_response(self, data: dict, status_code: int) -> None:
         self.send_response(status_code)
         self.send_header('Content-type', 'application/json') 
         self.send_header('Access-Control-Allow-Origin', '*') 
@@ -43,17 +43,17 @@ class QuizRequestHandler(BaseHTTPRequestHandler):
             json_path: str = os.path.join(QUESTIONS_DIR, ROUTES[self.path])
             
             with open(json_path, 'r', encoding='utf-8') as file:
-                raw_questions: dict = json.load(file)
+                questions: dict = json.load(file)
                 
             response_data: dict = {
-                "categoria": raw_questions["categoria"],
+                "categoria": questions["categoria"],
                 "questoes": [
                     {
-                        "id_questao": raw_question["id_questao"],
-                        "questao": raw_question["questao"],
-                        "respostas": raw_question["respostas"]
+                        "id_questao": q["id_questao"],
+                        "questao": q["questao"],
+                        "respostas": q["respostas"]
                     }
-                    for raw_question in raw_questions["questoes"]
+                    for q in questions["questoes"]
                 ]
             }
 
@@ -91,26 +91,19 @@ class QuizRequestHandler(BaseHTTPRequestHandler):
             json_path: str = os.path.join(QUESTIONS_DIR, CATEGORIES[answers['categoria']])
             
             with open(json_path, 'r', encoding='utf-8') as file:
-                raw_file: dict = json.load(file)
+                questions: dict = json.load(file)
 
-            correct_answers: list = [
-                {
-                    "id_questao": raw_question["id_questao"],
-                    "id_resposta": raw_question["id_resposta"],
-                    "observacao": raw_question["observacao"]
-                }
-                for raw_question in raw_file["questoes"]
-            ]
-
+            correct_answers: dict = { q["id_questao"]: q["id_resposta"] for q in questions["questoes"] }
+                
             score: int = 0
 
-            for answer in answers["respostas"]:
-                for correct_answer in correct_answers:
-                    if answer["id_questao"] == correct_answer["id_questao"]:
-                        if answer["id_resposta"] == correct_answer["id_resposta"]:
-                            score += 1
-                            
+            for answer in answers['respostas']:
+                question_id = answer['id_questao']
+                answer_id = answer['id_resposta']
                 
+                if question_id in correct_answers and answer_id == correct_answers[question_id]:
+                    score += 1
+                      
             self._send_json_response({"acertos": score}, 200)
             
         except json.JSONDecodeError:
@@ -128,72 +121,3 @@ def run():
 if __name__ == "__main__":
     run()
     
-"""
-exemplo de POST desejado:
-
-{
-    "categoria": "Tecnologia e Segurança",
-    "respostas": [
-        {
-            "id_questao": 1,
-            "id_resposta": 2
-        },
-        {
-            "id_questao": 2,
-            "id_resposta": 3
-        },
-        {
-            "id_questao": 3,
-            "id_resposta": 2
-        },
-        {
-            "id_questao": 4,
-            "id_resposta": 1
-        },
-        {
-            "id_questao": 5,
-            "id_resposta": 4
-        },
-        {
-            "id_questao": 6,
-            "id_resposta": 2
-        },
-        {
-            "id_questao": 7,
-            "id_resposta": 1
-        },
-        {
-            "id_questao": 8,
-            "id_resposta": 2
-        },
-        {
-            "id_questao": 9,
-            "id_resposta": 2
-        },
-        {
-            "id_questao": 10,
-            "id_resposta": 2
-        },
-        {
-            "id_questao": 11,
-            "id_resposta": 2
-        },
-        {
-            "id_questao": 12,
-            "id_resposta": 4
-        },
-        {
-            "id_questao": 13,
-            "id_resposta": 2
-        },
-        {
-            "id_questao": 14,
-            "id_resposta": 2
-        },
-        {
-            "id_questao": 15,
-            "id_resposta": 3
-        }
-    ]
-}
-"""
