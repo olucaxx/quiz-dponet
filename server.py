@@ -26,7 +26,7 @@ class QuizRequestHandler(BaseHTTPRequestHandler):
         self.send_header('Content-type', 'application/json') 
         self.send_header('Access-Control-Allow-Origin', '*') 
         self.end_headers()
-        self.wfile.write(json.dumps(data, indent=2, ensure_ascii=False).encode())
+        self.wfile.write(json.dumps(data).encode())
     
     def _send_error(self, message: str, status_code:int) -> None:
         self.send_response(status_code)
@@ -56,7 +56,7 @@ class QuizRequestHandler(BaseHTTPRequestHandler):
                     for raw_question in raw_questions["questoes"]
                 ]
             }
-            
+
             self._send_json_response(response_data, 200)
 
         except FileNotFoundError:
@@ -74,9 +74,9 @@ class QuizRequestHandler(BaseHTTPRequestHandler):
             content_length: int = int(self.headers['Content-Length'])
             post_data: bytes = self.rfile.read(content_length)
             
-            answers: dict = json.loads(post_data.decode('utf-8'))
-            
-            if 'categoria' not in answers :
+            answers: dict = json.loads(post_data.decode())
+
+            if 'categoria' not in answers:
                 self._send_error('Invalid JSON format, missing "categoria"', 400)
                 return
             
@@ -91,17 +91,33 @@ class QuizRequestHandler(BaseHTTPRequestHandler):
             json_path: str = os.path.join(QUESTIONS_DIR, CATEGORIES[answers['categoria']])
             
             with open(json_path, 'r', encoding='utf-8') as file:
-                correct_answers_dict: dict = json.load(file)
-             
-            
-            self._send_json_response({'teste': 'teste'}, 200)
+                raw_file: dict = json.load(file)
+
+            correct_answers: list = [
+                {
+                    "id_questao": raw_question["id_questao"],
+                    "id_resposta": raw_question["id_resposta"],
+                    "observacao": raw_question["observacao"]
+                }
+                for raw_question in raw_file["questoes"]
+            ]
+
+            score: int = 0
+
+            for answer in answers["respostas"]:
+                for correct_answer in correct_answers:
+                    if answer["id_questao"] == correct_answer["id_questao"]:
+                        if answer["id_resposta"] == correct_answer["id_resposta"]:
+                            score += 1
+                            
+                
+            self._send_json_response({"acertos": score}, 200)
             
         except json.JSONDecodeError:
             self._send_error('Invalid JSON', 400)
         
-        
-        # except Exception as e:
-        #     self._send_error(f'Internal Error: {str(e)}'.encode(), 500)
+        except Exception as e:
+            self._send_error(f'Internal Error: {str(e)}'.encode(), 500)
         
 def run():
     server_address = ("", PORT)
