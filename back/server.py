@@ -20,7 +20,12 @@ CATEGORIES: dict = {
     'Tecnologia e Segurança': 'tecnologiaSeguranca.json'
 }
 
-class QuizRequestHandler(BaseHTTPRequestHandler):         
+class QuizRequestHandler(BaseHTTPRequestHandler):      
+    def _set_cors_headers(self):
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        
     def _send_json_response(self, data: dict, status_code: int) -> None:
         self.send_response(status_code)
         self.send_header('Content-type', 'application/json') 
@@ -65,6 +70,11 @@ class QuizRequestHandler(BaseHTTPRequestHandler):
         except Exception as e:
             self._send_error(bytes(f'Internal Error: {str(e)}'.encode()), 500)
             
+    def do_OPTIONS(self) -> None:
+        self.send_response(200)
+        self._set_cors_headers()
+        self.end_headers()
+    
     def do_POST(self) -> None:
         if self.path != '/user-answers':
             self._send_error('Endpoint not found', 404)
@@ -103,7 +113,7 @@ class QuizRequestHandler(BaseHTTPRequestHandler):
                 
                 if question_id in correct_answers and answer_id == correct_answers[question_id]:
                     score += 1
-                      
+            
             self._send_json_response({"acertos": score}, 200)
             
         except json.JSONDecodeError:

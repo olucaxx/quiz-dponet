@@ -4,10 +4,9 @@ const elementoQuestao = window.document.getElementById("enunciado")//cria uma va
 const botoesRespostas = window.document.getElementById("alternativas")
 const botaoProximaQuestao = window.document.getElementById("botao-proxima")
 
-const totalPerguntas = 5
-
 let indiceQuestaoAtual = 0//para saber qual é o número da questão atual
 let nomeQuiz = "";
+let arrayRespostas = []
 
 // Função para embaralhar um array utilizando o algoritmo de Fisher-Yates
 function embaralharArray(array) {
@@ -23,6 +22,7 @@ function carregarQuestoes() {
     .then(data => {
       nomeQuiz = data.categoria;
       questoes = data.questoes;  // Acessa o array de questões no JSON
+      console.log(questoes)
       embaralharArray(questoes);  // Embaralha as questões ao carregar
       questoes.forEach(q => embaralharArray(q.respostas)); // Embaralha as alternativas de cada questão
       iniciarQuiz();  // Inicia o quiz após carregar as questões
@@ -57,7 +57,8 @@ function mostrarQuestao(){//Função que será usada para mostrar cada questão 
   questaoAtual.respostas.forEach((respostas) => {//o for each serve para varrer o vetor assim posso passar por todas as opções e pegar o que preciso e jogar as informções nos botões do html
   	const botao = window.document.createElement("button")//aqui estou criando um elemento no site do tipo button de forma dinâmica que substituirá aqueles botões na parte de html que estão escritos Resposta 01 etc...
     botao.innerHTML = respostas.texto //gera dinamicamnete o texto lá do array para os botões
-    botao.dataset.id= respostas.id//armazeno o id lá do array para mais para frente verificar qual resposta é a correta
+    botao.dataset.respostaId = respostas.id//armazeno o id lá do array para mais para frente verificar qual resposta é a correta
+    botao.dataset.questaoId = questaoAtual.id_questao
     botao.classList.add("btn")//se não colocar isso os botões vão perder o estilo do css que colocamos,visto que vc está gerando novos botões diferentes do que foi colocado no html, porém com isso a formatação volta pq colocamos a classe btn dentro desses novos botões
     botao.addEventListener("click", selecionarQuestao);//Ao clicar no botão vou chamar uma função chamda selecionar questão
     botoesRespostas.appendChild(botao)//aqui ele de fato mostra os botões com os textos lá do array objeto
@@ -65,27 +66,9 @@ function mostrarQuestao(){//Função que será usada para mostrar cada questão 
 }
 
 function selecionarQuestao(e){//esse "e" dentro dos parenteses é o evento passado pelo javascript que no nosso caso é o click
-	respostas = questoes[indiceQuestaoAtual].respostas
-  const respostaCerta = respostas.filter((respostas) => respostas.acertou == true)[0]//aqui eu armazeno a alternativa correta em uma variável depois de filtrar pelas respostas qual possui o atributo correct igual à true
   const botaoClicado = e.target//para saber qual botão foi clicado
-  
-  respostas.forEach(resposta => {
-    const botaoResposta = document.querySelector(`[data-id='${resposta.id}']`);
-    if (resposta.acertou) {
-      botaoResposta.style.backgroundColor = "#9aeabc"; 
-    }
-  });
-
-  if(botaoClicado.dataset.id == respostaCerta.id){
-    pontuacao++
-  }else{
-  	botaoClicado.style.backgroundColor = "#ed665c"; 
-    const questaoAtual = questoes[indiceQuestaoAtual]
-    observacoes.push({
-      numQuestao: indiceQuestaoAtual + 1,
-      observacao: questaoAtual.observacao
-    })
-  }
+  botaoClicado.style.backgroundColor = "#010730"; 
+  botaoClicado.style.color = "white"; 
   
   Array.from(botoesRespostas.children).forEach((botao) => {
   	botao.disabled = true
@@ -93,17 +76,19 @@ function selecionarQuestao(e){//esse "e" dentro dos parenteses é o evento passa
 
   botaoProximaQuestao.style.display = "block"
 
-  registrarResposta();
+  registrarResposta(botaoClicado.dataset.respostaId, botaoClicado.dataset.questaoId);
 }
 
-function registrarResposta() {
-  sessionStorage.setItem('resultadoQuiz', JSON.stringify({
-    acertos: pontuacao,
-    total: totalPerguntas,
-  }));
+function registrarResposta(id_resposta, id_questao) {
+  const novaResposta = { 
+    id_questao: id_questao,
+    id_resposta: id_resposta 
+  }
+
+  arrayRespostas.push(novaResposta);
 }
 
-
+/*
 function mostrarSituacao(){
   //essa função mostra a situção dos acertos
   //se for maior que tanots é bom, ou ruim, ou regular, ou péssimo, por exemplo
@@ -128,16 +113,34 @@ function mostrarSituacao(){
 
 function mostrarPontuacao(){
   let situacaoEmpresa = mostrarSituacao()//recebe o texto retornado pela função para dizer como está a situação
-  window.open("resultado.html", "_self")
+  window.open("../resultado/resultado.html", "_self")
 }
-
+*/
 function lidarProximoBotao(){
 	indiceQuestaoAtual++//incrementa o indce da questão pra passar pra proxima pergunta
   if(indiceQuestaoAtual < questoes.length){
   	mostrarQuestao()//mostra a próxima questão
   }else{
-    registrarResposta();
-  	mostrarPontuacao()//mostra a pontuação se chegou no final
+    respostasUsuario = {
+      categoria: nomeQuiz,
+      respostas: arrayRespostas
+    }
+
+    fetch("http://localhost:8080/user-answers", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', // Cabeçalho obrigatório para JSON
+      },
+      body: JSON.stringify(respostasUsuario)
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Erro HTTP: ${response.status}`);
+      }
+      return response.json()
+    })
+    .then(data => console.log('Resposta da API:', data))
+    .catch(error => console.error('Erro na requisição:', error));
   }
 }
 
