@@ -7,8 +7,6 @@ const botaoProximaQuestao = window.document.getElementById("botao-proxima")
 const totalPerguntas = 5
 
 let indiceQuestaoAtual = 0//para saber qual é o número da questão atual
-let pontuacao = 0 //saber quala pontução do jogador
-let observacoes = []
 let nomeQuiz = "";
 
 // Função para embaralhar um array utilizando o algoritmo de Fisher-Yates
@@ -20,11 +18,11 @@ function embaralharArray(array) {
 }
 
 function carregarQuestoes() {
-  fetch('questoes/' + categoria +'.json')  // Caminho para o arquivo JSON
+  fetch('http://localhost:8080/questions/' + categoria)  // Caminho para o arquivo JSON
     .then(response => response.json()) // Converte a resposta em JSON
     .then(data => {
       nomeQuiz = data.categoria;
-      questoes = data[String(dificuldade)];  // Acessa o array de questões no JSON
+      questoes = data.questoes;  // Acessa o array de questões no JSON
       embaralharArray(questoes);  // Embaralha as questões ao carregar
       questoes.forEach(q => embaralharArray(q.respostas)); // Embaralha as alternativas de cada questão
       iniciarQuiz();  // Inicia o quiz após carregar as questões
@@ -102,7 +100,6 @@ function registrarResposta() {
   sessionStorage.setItem('resultadoQuiz', JSON.stringify({
     acertos: pontuacao,
     total: totalPerguntas,
-    observacoes: observacoes
   }));
 }
 
@@ -159,7 +156,7 @@ function getParametroUrl(nome) {
 }
 
 const categoria = getParametroUrl('categoria');
-const dificuldade = getParametroUrl('dificuldade')
+
 if (categoria) {
   carregarQuestoes();
 }
