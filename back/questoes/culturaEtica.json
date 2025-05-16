@@ -1,0 +1,399 @@
+{
+    "categoria": "Cultura e Ética",
+    "facil": [
+        {
+            "questao": "Qual comportamento reflete uma cultura ética de dados?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Compartilhar dados de clientes em redes sociais.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Relatar suspeitas de violação ao encarregado de dados.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Ignorar políticas de privacidade para agilizar processos.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Armazenar senhas em post-its no monitor.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Transparência e responsabilidade são pilares da ética em dados."
+        },
+        {
+            "questao": "Qual atitude promove conscientização sobre LGPD na empresa?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Treinamentos regulares para todos os funcionários.",
+                    "acertou": true
+                },
+                {
+                    "id": 2,
+                    "texto": "Esconder incidentes de vazamento para evitar pânico.",
+                    "acertou": false
+                },
+                {
+                    "id": 3,
+                    "texto": "Permitir que cada setor defina suas próprias regras.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Não divulgar a Política de Privacidade.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Educação contínua é fundamental para a conformidade."
+        },
+        {
+            "questao": "O que é 'privacidade desde a concepção'?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Adicionar segurança apenas após lançamento de um produto.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Integrar proteção de dados desde o design de processos e sistemas.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Contratar consultores após um vazamento.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Usar dados públicos sem restrições.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Prevenir riscos desde o início reduz custos e violações."
+        },
+        {
+            "questao": "Qual situação caracteriza má ética no uso de dados?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Usar dados anonimizados para estudos de mercado.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Vender dados pessoais de clientes sem consentimento.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Seguir a Política de Privacidade da empresa.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Excluir dados após o prazo legal.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Ética e LGPD exigem respeito à autonomia do titular."
+        },
+        {
+            "questao": "Qual prática reforça a transparência com clientes?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Ocultar termos de uso em letras miúdas.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Disponibilizar uma Política de Privacidade clara e acessível.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Não informar sobre cookies no site.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Coletar dados extras 'por garantia'.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Transparência constrói confiança e evita penalidades."
+        }
+    ],
+    "media": [
+        {
+            "questao": "Como lidar com um funcionário que compartilha dados internos por descuido?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Demiti-lo imediatamente por negligência.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Oferecer treinamento adicional e revisar processos.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Ignorar, pois foi um erro sem consequências.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Compartilhar o caso publicamente para servir de exemplo.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Erros humanos exigem correção, não apenas punição."
+        },
+        {
+            "questao": "Qual postura é esperada do líder na cultura de privacidade?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Priorizar resultados financeiros sobre a ética.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Dar exemplo e incentivar o cumprimento das políticas.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Delegar a conformidade apenas ao jurídico.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Ignorar solicitações de titulares para economizar tempo.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Liderança comprometida é crucial para uma cultura sólida."
+        },
+        {
+            "questao": "O que é 'accountability' na LGPD?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Responsabilizar terceiros por violações.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Demonstrar medidas proativas para garantir conformidade.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Transferir dados para países sem regulamentação.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Coletar o mínimo possível de dados.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Accountability significa ser responsável e transparente perante a lei."
+        },
+        {
+            "questao": "Qual iniciativa promove ética no uso de IA?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Usar algoritmos não auditáveis para decisões automatizadas.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Garantir transparência e evitar viés discriminatório.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Ocultar o uso de IA dos clientes.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Coletar dados sensíveis sem consentimento.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "IA ética requer transparência, justiça e responsabilidade."
+        },
+        {
+            "questao": "Qual atitude desrespeita a privacidade do titular?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Responder a uma solicitação de acesso dentro do prazo.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Compartilhar dados com terceiros sem informar o titular.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Oferecer opção de opt-out em campanhas de e-mail.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Armazenar dados com criptografia.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Transparência é direito do titular e dever do controlador."
+        }
+    ],
+    "dificil": [
+        {
+            "questao": "Como equilibrar inovação e proteção de dados em projetos?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Ignorar a LGPD para acelerar lançamentos.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Realizar avaliações de impacto e consultar o encarregado de dados.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Coletar o máximo de dados possível 'para análise futura'.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Terceirizar a responsabilidade para consultorias externas.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Inovar com responsabilidade exige mitigar riscos desde o planejamento."
+        },
+        {
+            "questao": "Qual é o papel da ética em decisões não cobertas explicitamente pela LGPD?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Ignorar, pois só a lei importa.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Guiar escolhas para além do mínimo legal, priorizando o titular.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Deixar a critério de cada funcionário.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Seguir apenas práticas do mercado, mesmo que questionáveis.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "A ética complementa a lei, fortalecendo a confiança e a reputação."
+        },
+        {
+            "questao": "Como lidar com pressão para usar dados de forma antiética visando lucro?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Ceder, desde que não haja multas previstas.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Recusar e reportar ao comitê de ética ou DPO.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Pedir anonimização posterior para esconder o problema.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Usar dados apenas de clientes que não reclamarem.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Integridade deve prevalecer mesmo sob pressão por resultados."
+        },
+        {
+            "questao": "Qual prática reflete responsabilidade social no tratamento de dados?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Explorar dados de comunidades vulneráveis para lucro.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Garantir inclusão digital e proteção a grupos minorizados.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Vender dados para qualquer interessado.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Não oferecer opção de exclusão de dados.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Ética e responsabilidade social andam juntas na proteção de dados."
+        },
+        {
+            "questao": "O que é 'viés algorítmico' e como mitigá-lo?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Erro em sistemas que discriminam grupos; mitigado com dados diversos e auditorias.",
+                    "acertou": true
+                },
+                {
+                    "id": 2,
+                    "texto": "Vantagem técnica em algoritmos de segurança; não requer ação.",
+                    "acertou": false
+                },
+                {
+                    "id": 3,
+                    "texto": "Falha de conexão na internet; resolvido com melhor infraestrutura.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Método para acelerar processamento de dados; deve ser incentivado.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Viés em algoritmos pode perpetuar desigualdades. Diversidade de dados e testes são essenciais."
+        }
+    ]
+}

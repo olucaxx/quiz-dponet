@@ -1,0 +1,399 @@
+{
+    "categoria": "Legalidade e Regulação",
+    "facil": [
+        {
+            "questao": "Qual situação exige o consentimento explícito do titular de dados pessoais?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Armazenar dados para cumprir uma obrigação legal.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Usar dados para enviar newsletter de marketing.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Compartilhar dados com órgãos governamentais por determinação judicial.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Processar dados para pagamento de salários.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Consentimento é obrigatório para atividades como marketing, exceto se houver outra base legal."
+        },
+        {
+            "questao": "O que a empresa deve fazer se um cliente solicitar a exclusão de seus dados pessoais?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Ignorar a solicitação, pois os dados são necessários para futuras transações.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Excluir os dados imediatamente, sem verificar o contexto.",
+                    "acertou": false
+                },
+                {
+                    "id": 3,
+                    "texto": "Avaliar se há uma base legal que permita manter os dados (ex: obrigação fiscal).",
+                    "acertou": true
+                },
+                {
+                    "id": 4,
+                    "texto": "Pedir ao cliente que explique detalhadamente o motivo da solicitação.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "A exclusão pode ser negada se houver base legal para retenção, como cumprir leis fiscais."
+        },
+        {
+            "questao": "Qual documento é obrigatório para empresas que tratam dados pessoais sob a LGPD?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Política de Privacidade.",
+                    "acertou": true
+                },
+                {
+                    "id": 2,
+                    "texto": "Contrato Social atualizado.",
+                    "acertou": false
+                },
+                {
+                    "id": 3,
+                    "texto": "Relatório Anual de Sustentabilidade.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Certificado ISO 9001.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "A Política de Privacidade deve ser clara e acessível, informando como os dados são tratados."
+        },
+        {
+            "questao": "Qual é o prazo máximo para responder a uma solicitação do titular de dados?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "5 dias úteis.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "15 dias corridos.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "30 dias corridos.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Não há prazo definido.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "O prazo é de 15 dias, prorrogáveis por mais 15 mediante justificativa."
+        },
+        {
+            "questao": "O que é considerado uma infração grave pela LGPD?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Não atualizar a Política de Privacidade semestralmente.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Compartilhar dados sensíveis sem consentimento ou base legal.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Usar cookies em um site institucional.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Armazenar dados de clientes por mais de 2 anos.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Dados sensíveis exigem proteção extra! Sempre valide a base legal para seu tratamento."
+        }
+    ],
+    "media": [
+        {
+            "questao": "Uma empresa de e-commerce quer usar dados de compras para criar perfis de clientes. Qual base legal é mais adequada?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Consentimento explícito.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Legítimo interesse (ex: personalizar ofertas).",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Obrigação contratual.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Proteção à vida.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Legítimo interesse pode ser usado, mas é necessário avaliar o impacto na privacidade."
+        },
+        {
+            "questao": "Qual ação é proibida ao coletar dados de menores de idade?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Armazenar dados com criptografia.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Coletar sem consentimento dos pais ou responsáveis.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Usar dados para matrícula escolar.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Compartilhar dados com autoridades de saúde.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Dados de menores exigem consentimento parental, exceto para proteção da criança."
+        },
+        {
+            "questao": "A empresa pode compartilhar dados de clientes com um parceiro comercial sem consentimento?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Sim, desde que o parceiro assine um NDA.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Sim, se houver contrato de tratamento de dados entre as partes.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Não, o consentimento é sempre obrigatório.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Sim, se os dados forem anonimizados.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "O compartilhamento exige acordo e finalidade compatível com a base legal original."
+        },
+        {
+            "questao": "Qual situação NÃO caracteriza violação de dados?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Acesso não autorizado a um sistema por funcionário.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Exclusão acidental de dados sem backup.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Vazamento de e-mails de clientes em um fórum público.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Alteração fraudulenta de endereços cadastrais.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Violação envolve acesso, destruição ou vazamento NÃO autorizado. Erros operacionais sem risco não se enquadram."
+        },
+        {
+            "questao": "Qual prática está alinhada à LGPD para evitar multas?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Coletar apenas dados estritamente necessários.",
+                    "acertou": true
+                },
+                {
+                    "id": 2,
+                    "texto": "Armazenar dados indefinidamente para auditorias futuras.",
+                    "acertou": false
+                },
+                {
+                    "id": 3,
+                    "texto": "Usar dados de clientes para novas finalidades não informadas.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Compartilhar dados com terceiros sem registro.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "O princípio da minimização de dados reduz riscos e garante conformidade."
+        }
+    ],
+    "dificil": [
+        {
+            "questao": "Uma empresa sofre um vazamento de dados. Qual ação deve ser priorizada?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Notificar a ANPD e os titulares dentro de 72 horas.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Contratar uma consultoria para assessoria jurídica.",
+                    "acertou": false
+                },
+                {
+                    "id": 3,
+                    "texto": "Conter o vazamento e avaliar a extensão do dano.",
+                    "acertou": true
+                },
+                {
+                    "id": 4,
+                    "texto": "Atualizar a Política de Privacidade no site.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "A contenção imediata é crucial. A notificação à ANPD só ocorre após avaliação."
+        },
+        {
+            "questao": "Qual cenário permite o tratamento de dados sensíveis sem consentimento?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Pesquisa de mercado sobre preferências religiosas.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Contratação de um funcionário com coleta de dados de saúde para plano médico.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Segmentação de campanhas políticas em redes sociais.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Compartilhamento de dados biométricos com parceiros comerciais.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "Dados de saúde podem ser tratados para execução de contrato (ex: plano médico)."
+        },
+        {
+            "questao": "Qual decisão é mais adequada ao receber uma solicitação de acesso a dados incompleta?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Ignorar a solicitação até que o titular complete os requisitos.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Pedir esclarecimentos ao titular sem interromper o prazo legal.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Negar a solicitação por falta de informações.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Encaminhar o caso diretamente para o jurídico.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "É obrigatório orientar o titular, mas o prazo de resposta só para se faltarem dados essenciais."
+        },
+        {
+            "questao": "Ao transferir dados de clientes para outro país, o que é indispensável?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Notificar a ANPD com 30 dias de antecedência.",
+                    "acertou": false
+                },
+                {
+                    "id": 2,
+                    "texto": "Garantir que o país destino tenha nível adequado de proteção de dados.",
+                    "acertou": true
+                },
+                {
+                    "id": 3,
+                    "texto": "Obter aprovação do setor de marketing.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Traduzir os dados para o idioma local.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "A transferência exige que o país ou organização receptor ofereça proteção equivalente à LGPD."
+        },
+        {
+            "questao": "Qual medida é mais eficaz para reduzir riscos de sanções por descumprimento da LGPD?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "texto": "Treinar equipes sobre boas práticas de privacidade.",
+                    "acertou": true
+                },
+                {
+                    "id": 2,
+                    "texto": "Contratar um seguro contra multas regulatórias.",
+                    "acertou": false
+                },
+                {
+                    "id": 3,
+                    "texto": "Armazenar todos os dados em servidores locais.",
+                    "acertou": false
+                },
+                {
+                    "id": 4,
+                    "texto": "Exigir consentimento para todas as operações.",
+                    "acertou": false
+                }
+            ],
+            "observacao": "A conscientização interna previne erros humanos, principal causa de violações."
+        }
+    ]
+}
