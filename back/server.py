@@ -108,8 +108,8 @@ class QuizRequestHandler(BaseHTTPRequestHandler):
             score: int = 0
 
             for answer in answers['respostas']:
-                question_id = answer['id_questao']
-                answer_id = answer['id_resposta']
+                question_id = int(answer['id_questao'])
+                answer_id = int(answer['id_resposta'])
                 
                 if question_id in correct_answers and answer_id == correct_answers[question_id]:
                     score += 1

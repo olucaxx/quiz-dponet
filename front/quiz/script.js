@@ -139,7 +139,11 @@ function lidarProximoBotao(){
       }
       return response.json()
     })
-    .then(data => console.log('Resposta da API:', data))
+    .then(data => {
+      sessionStorage.setItem('resultadoQuiz', JSON.stringify(data))
+      window.open("../resultado/resultado.html", "_self")
+      console.log(sessionStorage.getItem('resultadoQuiz'))
+    })
     .catch(error => console.error('Erro na requisição:', error));
   }
 }
