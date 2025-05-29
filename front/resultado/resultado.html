@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <title>Quiz DPOnet</title>
-    <link rel="stylesheet" href="../estilo.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="icon" href="">
-  </head>
-  <body>
-    <a href="https://www.dponet.com.br"> <img src="../logo.png" alt="Logotipo DPOnet" id="logo"> </a> 
-    <div class="app">
 
-      <h1>Resultado</h1>
+<head>
+  <meta charset="utf-8">
+  <title>Quiz DPOnet</title>
+  <link rel="stylesheet" href="../estilo.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="icon" href="">
+</head>
 
-      <div class="container-pontuacao">
-        <p id="acertos"></p>
-      </div>
-    
-      <p id="texto-aviso"> <b>AVISO:</b> os resultados dos testes são apenas indicativos e podem não refletir completamente a realidade da sua empresa. <strong>Para uma avaliação mais detalhada, agende uma consulta com nossos especialistas</strong>. </p>
-      
-      <div id="container-contato">
-        <p>Para entrar em contato, preencha nosso <a href="https://lps.dponet.com.br/institucional/#lp-pom-form-505">formulário</a></p>
+<body>
+  <a href="https://www.dponet.com.br"> <img src="../assets/logo.png" alt="Logotipo DPOnet" id="logo"> </a>
+  <div class="app">
+
+    <h1>Resultado</h1>
+
+    <div id="div-resultado">
+      <ul>
+        <li>Perigoso</li>
+        <li>Preocupante</li>
+        <li>Moderado</li>
+        <li>Bom</li>
+        <li>Ótimo</li>
+      </ul>
+
+      <div id="caixa-indicador"></div>
+
+      <div id="limitador-seta">
+        <span id="regua-seta"></span>
+        <img id="imagem-seta" src="../assets/seta.png" />
       </div>
     </div>
+
+    <p id="texto-aviso"></p>
+
+    <div id="container-contato">
+      <p>Para entrar em contato, preencha nosso <a
+          href="https://lps.dponet.com.br/institucional/#lp-pom-form-505">formulário</a></p>
+    </div>
+  </div>
   <script src="script.js"> </script>
-  </body>
+</body>
+
 </html>
