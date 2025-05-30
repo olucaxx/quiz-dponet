@@ -7,6 +7,7 @@ const botaoProximaQuestao = window.document.getElementById("botao-proxima")
 let indiceQuestaoAtual = 0//para saber qual é o número da questão atual
 let nomeQuiz = "";
 let arrayRespostas = []
+let clickBotao
 
 // Função para embaralhar um array utilizando o algoritmo de Fisher-Yates
 function embaralharArray(array) {
@@ -66,17 +67,17 @@ function mostrarQuestao(){//Função que será usada para mostrar cada questão 
 }
 
 function selecionarQuestao(e){//esse "e" dentro dos parenteses é o evento passado pelo javascript que no nosso caso é o click
-  const botaoClicado = e.target//para saber qual botão foi clicado
-  botaoClicado.style.backgroundColor = "#010730"; 
-  botaoClicado.style.color = "white"; 
-  
-  Array.from(botoesRespostas.children).forEach((botao) => {
-  	botao.disabled = true
+  clickBotao = e.target;//para saber qual botão foi clicado
+
+  Array.from(botoesRespostas.children).forEach((botao) => { //remove o destaque de todos os botões
+    botao.style.backgroundColor = '';
+    botao.style.color = ''
   })
 
-  botaoProximaQuestao.style.display = "block"
+  clickBotao.style.backgroundColor = "#010730"; //destaca o botão selecionado
+  clickBotao.style.color = "white"; 
 
-  registrarResposta(botaoClicado.dataset.respostaId, botaoClicado.dataset.questaoId);
+  botaoProximaQuestao.style.display = "block";
 }
 
 function registrarResposta(id_resposta, id_questao) {
@@ -117,6 +118,14 @@ function mostrarPontuacao(){
 }
 */
 function lidarProximoBotao(){
+
+  Array.from(botoesRespostas.children).forEach((botao) => { //bloqueia todos os botões de resposta
+    botao.disabled = true;
+  });
+
+  //salva a resposta selecionada (atualize a resposta se já existir para esta questão)
+  registrarResposta(clickBotao.dataset.respostaId, clickBotao.dataset.questaoId);
+
 	indiceQuestaoAtual++//incrementa o indce da questão pra passar pra proxima pergunta
   if(indiceQuestaoAtual < questoes.length){
   	mostrarQuestao()//mostra a próxima questão
@@ -142,7 +151,6 @@ function lidarProximoBotao(){
     .then(data => {
       sessionStorage.setItem('resultadoQuiz', JSON.stringify(data))
       window.open("../resultado/resultado.html", "_self")
-      console.log(sessionStorage.getItem('resultadoQuiz'))
     })
     .catch(error => console.error('Erro na requisição:', error));
   }
